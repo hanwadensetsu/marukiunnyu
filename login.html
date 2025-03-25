@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>ログイン - google</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <center>
+        <div class="container">
+            <h1>ログイン</h1>
+            <p>作業を続けるには、ログインしてください。</p>
+            <p>ユーザー名</p>
+            <input type="text" id="username" class="textbox" placeholder="ユーザー名を入力">
+            <p>パスワード</p>
+            <input type="password" id="pass" class="textbox" placeholder="パスワードを入力">
+            <br><input type="checkbox" id="showpassword" onchange="showOrHide()" class="margin">
+            <span>パスワードを表示する</span>
+            <br><input type="button" value="ログイン" class="button margin" onclick="login()">
+        </div>
+    </center>
+
+<style>
+.textbox {
+    width: 350px;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid rgb(145, 145, 145);
+}
+
+.button {
+    width: calc(20% + 30px);
+    height: 30px;
+    background-color: rgb(105, 230, 121);
+    border: none;
+    border-radius: 5px;
+}
+
+.container {
+    width: 400px;
+    height: 500px;
+    background-color: white;
+    color: black;
+    border-radius: 20px;
+    margin: 0 auto;
+    border: 1px solid rgb(156, 156, 156);
+}
+
+.button:hover {
+    background: rgb(90, 189, 255);
+}
+
+.textbox:hover {
+    background-color: rgb(90, 189, 255);
+}
+
+.margin {
+    margin-top: 20px;
+}
+</style>
+
+<script>
+function showOrHide() {
+    let showpass = document.getElementById("pass");
+    let check = document.getElementById("showpassword");
+    if (check.checked) {
+        showpass.type = "text";
+    } else {
+        showpass.type = "password";
+    }
+}
+
+let userdata = [
+    { name: "丸木運輸工事株式会社", password: "HanwaMaruki" },
+    { name: "丸木運輸工事株式会社総務部", password: "HanwaSoumu" }
+];
+
+function login() {
+    let loginuser = "";
+    let username = document.getElementById("username").value;
+    let password = document.getElementById("pass").value;
+
+    let found = false;
+    let i = 0;
+
+    while (!found && i < userdata.length) {
+        loginuser = userdata[i];
+        if (loginuser.name === username && loginuser.password === password) {
+            found = true;
+        }
+        i++;
+    }
+
+    if (found) {
+        alert(`ようこそ。${username}さん。`);
+        sessionStorage.setItem('loggedIn', true);
+        window.location.href = "companysyainpage.html";
+    } else {
+        alert("ログインに失敗しました。入力している内容がデータと一致しませんでした。");
+    }
+}
+</script>
+</body>
+</html>
