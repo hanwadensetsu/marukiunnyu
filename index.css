@@ -122,28 +122,28 @@ width:90%;
 }
  
 .background-1 {
-  background-image: url("images/ホーム/背景.jpg");
+  background-image: url("ホーム/背景.jpg");
   
 }
 .background-2 {
-  background-image: url("images/業務内容/gyohai.jpg");
+  background-image: url("業務内容/gyohai.jpg");
   
 }
 
 .background-3 {
-  background-image: url("images/会社概要/kaigaihai.jpg");
+  background-image: url("会社概要/kaigaihai.jpg");
 }
 
 .background-4 {
-  background-image: url("images/採用情報/saihai.jpg");
+  background-image: url("採用情報/saihai.jpg");
 }
 
 .background-5 {
-  background-image: url("images/中途採用/tyuuhai.jpg");
+  background-image: url("中途採用/tyuuhai.jpg");
 }
 
 .background-6 {
-  background-image: url("images/お問い合わせ/otoihaikei.jpg");
+  background-image: url("お問い合わせ/otoihaikei.jpg");
 }
 
 .tousya{
@@ -333,7 +333,7 @@ margin: 0 auto;
 /*------------------------------------------------------------------*/
 /*------------地図アイコン-----------------------*/
 .txt3 p.tizuaikon{
-background:url(images/ホーム/地図.png) no-repeat left center / auto 1em;
+background:url("ホーム/地図.png") no-repeat left center / auto 1em;
 padding:0000.8em;
 }                           
 
