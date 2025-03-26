@@ -1,8 +1,78 @@
+/会社概要
+//クラス名が「scroll-in」の要素を取得
+const objects = document.querySelectorAll('.scroll-in');
+
+//スクロール感知で実行
+const cb = function(entries, observer) {
+    entries.forEach(entry => {
+        if(entry.isIntersecting) {
+            entry.target.classList.add('displayed');//スクロール感知で「displayed」のクラス名を付与
+            observer.unobserve(entry.target); //監視の終了
+        }
+    });
+}
+// オプション
+const options = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0
+}
+
+// IntersectionObserverインスタンス化
+const io = new IntersectionObserver(cb, options);
+
+// 監視を開始
+objects.forEach(object => {
+    io.observe(object);
+});
+
+
+////////////////////////
 
 
 
-const _0x1604b5=_0x160b;(function(_0x47e7d0,_0x56ccbd){const _0xb74f94=_0x160b,_0x2c56e7=_0x47e7d0();while(!![]){try{const _0x21b83d=-parseInt(_0xb74f94(0xc6))/0x1*(parseInt(_0xb74f94(0xde))/0x2)+parseInt(_0xb74f94(0xc3))/0x3*(parseInt(_0xb74f94(0xe2))/0x4)+-parseInt(_0xb74f94(0xe5))/0x5+parseInt(_0xb74f94(0xdd))/0x6+-parseInt(_0xb74f94(0xd5))/0x7+parseInt(_0xb74f94(0xe4))/0x8+parseInt(_0xb74f94(0xc5))/0x9;if(_0x21b83d===_0x56ccbd)break;else _0x2c56e7['push'](_0x2c56e7['shift']());}catch(_0x26e767){_0x2c56e7['push'](_0x2c56e7['shift']());}}}(_0x5bee,0x241de));const objects=document[_0x1604b5(0xca)](_0x1604b5(0xd9)),cb=function(_0x109aab,_0x4756fb){_0x109aab['forEach'](_0x1e48ef=>{const _0x528903=_0x160b;_0x1e48ef['isIntersecting']&&(_0x1e48ef[_0x528903(0xd4)][_0x528903(0xcc)]['add'](_0x528903(0xdc)),_0x4756fb[_0x528903(0xc7)](_0x1e48ef[_0x528903(0xd4)]));});},options={'root':null,'rootMargin':'0px','threshold':0x0},io=new IntersectionObserver(cb,options);function _0x5bee(){const _0x970acb=['log','target','1317498OsWUVm','HanwaSoumu','type','companysyainpage.html','.scroll-in','length','location','displayed','634320MDHyCf','92fnJWRs','ようこそ。','observe','checked','4SoExml','丸木運輸工事株式会社総務部','1273960DVPJAS','933490TozkVP','さん。','577383QGUhUN','forEach','1288854sHUKxX','1691JzNAll','unobserve','HanwaMaruki','hasOwnProperty','querySelectorAll','丸木運輸工事株式会社','classList','name','password','Login\x20failed.\x20Data\x20in\x20the\x20user\x20data\x20variable\x20may\x20be\x20corrupted\x20or\x20entered\x20incorrectly.\x20If\x20there\x20are\x20no\x20typos\x20in\x20what\x20you\x20entered,\x20please\x20check\x20the\x20userdata\x20variable\x20in\x20javascript.','getElementById','href','ログインに失敗しました。入力している内容がデータと一致しませんでした。'];_0x5bee=function(){return _0x970acb;};return _0x5bee();}objects[_0x1604b5(0xc4)](_0x520a98=>{const _0xa5a4f5=_0x1604b5;io[_0xa5a4f5(0xe0)](_0x520a98);});function showOrHide(){const _0x52e016=_0x1604b5;let _0x440604=document['getElementById']('pass'),_0x1de9f6=document['getElementById']('showpassword');_0x1de9f6[_0x52e016(0xe1)]?_0x440604['type']='text':_0x440604[_0x52e016(0xd7)]=_0x52e016(0xce);}function _0x160b(_0x17aca3,_0x379eb5){const _0x5beea5=_0x5bee();return _0x160b=function(_0x160b67,_0x4cd43d){_0x160b67=_0x160b67-0xc3;let _0x3456b5=_0x5beea5[_0x160b67];return _0x3456b5;},_0x160b(_0x17aca3,_0x379eb5);}let userdata=[{'name':_0x1604b5(0xcb),'password':_0x1604b5(0xc8)},{'name':_0x1604b5(0xe3),'password':_0x1604b5(0xd6)}];function login(){const _0x1bd19f=_0x1604b5;let _0x2a64a1='',_0x1b977b=document['getElementById']('username')['value'],_0x4a51dd=document[_0x1bd19f(0xd0)]('pass')['value'],_0x57cb50=![],_0x58762d=0x0;while(!_0x57cb50&&_0x58762d<userdata[_0x1bd19f(0xda)]){_0x2a64a1=userdata[_0x58762d],_0x2a64a1['hasOwnProperty'](_0x1bd19f(0xcd))&&_0x2a64a1[_0x1bd19f(0xc9)](_0x1bd19f(0xce))&&(_0x2a64a1['name']===_0x1b977b&&_0x2a64a1[_0x1bd19f(0xce)]===_0x4a51dd&&(_0x57cb50=!![])),_0x58762d++;}_0x57cb50?(alert(_0x1bd19f(0xdf)+_0x1b977b+_0x1bd19f(0xe6)),window[_0x1bd19f(0xdb)][_0x1bd19f(0xd1)]=_0x1bd19f(0xd8)):(alert(_0x1bd19f(0xd2)),console[_0x1bd19f(0xd3)](_0x1bd19f(0xcf)));}
+//会員ページ//
 
+function showOrHide() {
+    let showpass = document.getElementById("pass");
+    let check = document.getElementById("showpassword");
+    if (check.checked) {
+        showpass.type = "text";
+    } else {
+        showpass.type = "password";
+    }
+}
 
+let userdata = [
+    { name: "丸木運輸工事株式会社", password: "HanwaMaruki" },
+    { name: "丸木運輸工事株式会社総務部", password: "HanwaSoumu" } // 追加されたユーザー情報
+];
 
+function login() {
+    let loginuser = "";
+    let username = document.getElementById("username").value;
+    let password = document.getElementById("pass").value;
 
+    let found = false;
+    let i = 0;
+
+    while (!found && i < userdata.length) {
+        loginuser = userdata[i];
+        if (loginuser.hasOwnProperty("name") && loginuser.hasOwnProperty("password")) {
+            if (loginuser.name === username && loginuser.password === password) {
+                found = true;
+            }
+        }
+        i++;
+    }
+
+    if (found) {
+        alert(`ようこそ。${username}さん。`);
+        
+        // 別のページにリダイレクト
+        window.location.href = "companysyainpage.html"; // ここにリダイレクト先のURLを入力
+    } else {
+        alert("ログインに失敗しました。入力している内容がデータと一致しませんでした。");
+        console.log("Login failed. Data in the user data variable may be corrupted or entered incorrectly. If there are no typos in what you entered, please check the userdata variable in javascript.");
+    }
+}
