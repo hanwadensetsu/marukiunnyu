@@ -94,7 +94,34 @@
 
 
 
+<script>
 
+document.addEventListener('DOMContentLoaded', () => {
+    const objects = document.querySelectorAll('.scroll-in');
+
+    const cb = function(entries, observer) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('displayed');
+                observer.unobserve(entry.target);
+            }
+        });
+    };
+
+    const options = {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0
+    };
+
+    const io = new IntersectionObserver(cb, options);
+
+    objects.forEach(object => {
+        io.observe(object);
+    });
+});
+
+</script>
 
 
 
