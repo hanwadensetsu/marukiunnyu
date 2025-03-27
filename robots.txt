@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://hanwadensetsu.github.io/marukiunnyu.co/sitemap.xml
