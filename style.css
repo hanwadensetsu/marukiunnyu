@@ -1,0 +1,399 @@
+ @charset "UTF-8";
+html{
+    font-size:100%;/*ユーザー設定の文字サイズを正しく反映*/
+}
+*{
+    box-sizing:border-box;
+}
+img{
+    max-width:100%;/*画像が親要素からはみ出すのを防ぐ*/
+    height:auto;
+    box-sizing:border-box;
+}
+body{
+    background-color:#fff;
+    margin:0;
+    padding:0;
+}
+/*一回リンク押したら紫に代わる*/
+
+a:visited{
+  color :purple;
+}
+a:hover{
+  color : green;
+}
+
+a {
+ text-decoration: none; /* リンクの下線を消す */
+ position: relative; /* 擬似要素の基準位置を設定 */
+ color: #333; /* リンクテキストの色 */
+ padding-bottom: 10px; /* リンクテキスト下部の余白 */
+}
+a::before {
+ content: ""; /* 擬似要素の内容は空に設定 */
+ position: absolute; /* リンクを基準に絶対位置を指定 */
+ left: 0; /* 下線を左端から表示するための開始位置 */
+ bottom: 0; /* リンクテキストの下に下線を配置 */
+ width: 0; /* 初期の下線幅を0に設定 */
+ height: 2px; /* 下線の太さ */
+ background-color: #333; /* 下線の色 */
+ transition: all 0.4s ease; /* ホバー時の下線アニメーション効果 */
+}
+a:hover::before {
+ width: 100%; /* ホバー時に下線が全体に広がるよう設定 */
+}
+.text:hover {
+  text-shadow: 0 0 0 #000, 0 1.5em 0 #000; /* 2つの影の位置を上方向に1.5emずつずらす */
+}
+
+/*----ヘッダー--------------------------------------------*/
+
+header{
+    width:100%;
+    background-color:#fff;
+    display:flex;
+    justify-content:space-between; /*メニューを右端に置く方法その１*/
+    padding:0 2%;
+    align-items:center;
+　　position:fixed;  /*ヘッダーの位置を固定*/
+    top:0;  /*ヘッダーの位置を固定（上0）*/
+    left:0; /*ヘッダーの位置を左固定（左０）*/
+}  
+ul{
+    display:flex;
+    list-style:none;
+}
+li{
+    margin-left:40px;
+}
+a{
+    text-decoration:none;
+    color:#333;
+}
+nav{
+    margin-left:auto; /*メニューを右端に置く方法その２*/
+}
+a:hover{
+    opacity: 0.5;
+}
+/*----文字が出てくる--------------------------------------------*/
+.container {
+    display: flex;
+    flex-direction: column; /* タイトルを上に */
+    align-items: left;
+    gap: 20px; /* 各セクションの間に余白を設定 */
+}
+/*----当社について-------*/
+.txt {
+    display: flex;
+    align-items: flex-start; /* 左揃えに設定 */
+    overflow: hidden;
+}
+
+.txt p {
+    color: cadetblue;
+    font-size: 5vw;
+    font-weight: bold;
+    letter-spacing: .06em;
+    margin: 0;
+
+    /* アニメーション関係 */
+    transform: translateY(2em);
+    animation: textanimation 2s forwards;
+}
+/* 1文字目 */
+.txt p:nth-child(1) {
+    animation-delay: 0.4s
+}
+/* 2文字目 */
+.txt p:nth-child(2) {
+    animation-delay: 0.6s
+}
+/* 3文字目 */
+.txt p:nth-child(3) {
+    animation-delay: 0.8s
+}
+/* 4文字目 */
+.txt p:nth-child(4) {
+    animation-delay: 1.0s
+}
+/* 5文字目 */
+.txt p:nth-child(5) {
+    animation-delay: 1.2s
+}
+/* 6文字目 */
+.txt p:nth-child(6) {
+    animation-delay: 1.4s
+}
+@keyframes textanimation {
+    0% {
+        transform: translateY(2em);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/*----事務所兼倉庫-------*/
+.txt2 {
+    display: flex;
+    align-items: flex-start; /* 左揃えに設定 */
+    overflow: hidden;
+}
+
+.txt2 p {
+    color: cadetblue;
+    font-size: 5vw;
+    font-weight: bold;
+    letter-spacing: .06em;
+    margin:0;
+
+    /* ここからアニメーション関係 */
+    transform: translateY(2em);
+    animation: textanimation 2s forwards;
+}
+/* 1文字目 */
+.txt2 p:nth-child(1) {
+    animation-delay: 3.0s
+}
+/* 2文字目 */
+.txt2 p:nth-child(2) {
+    animation-delay: 3.2s
+}
+/* 3文字目 */
+.txt2 p:nth-child(3) {
+    animation-delay: 3.4s
+}
+/* 4文字目 */
+.txt2 p:nth-child(4) {
+    animation-delay: 3.6s
+}
+/* 5文字目 */
+.txt2 p:nth-child(5) {
+    animation-delay: 3.8s
+}
+/* 6文字目 */
+.txt2 p:nth-child(6) {
+    animation-delay: 4.0s
+}
+@keyframes textanimation {
+    0% {
+        transform: translateY(2em);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/*----地図-------*/
+.text-contenttizu {
+    display: flex;
+    flex-direction: column; /* タイトルと説明文を上下に配置 */
+    align-items: flex-start; /* 左揃え */
+    max-width: 50%; /* テキスト部分の最大幅 */
+    line-height: 1.5;
+}
+
+.txt3 {
+    display: flex;
+    overflow: hidden;
+}
+
+.txt3 p {
+    color: cadetblue;
+    font-size: 5vw;
+    font-weight: bold;
+    letter-spacing: .06em;
+    margin: 0;
+
+    /* ここからアニメーション関係 */
+    transform: translateY(2em);
+    animation: textanimation 2s forwards;
+}
+/* 1文字目 */
+.txt3 p:nth-child(1) {
+    animation-delay: 5.0s
+}
+/* 2文字目 */
+.txt3 p:nth-child(2) {
+    animation-delay: 5.2s
+}
+/* 3文字目 */
+.txt3 p:nth-child(3) {
+    animation-delay: 5.4s
+}
+/* 4文字目 */
+.txt3 p:nth-child(4) {
+    animation-delay: 5.6s
+}
+/* 5文字目 */
+.txt3 p:nth-child(5) {
+    animation-delay: 5.8s
+}
+/* 6文字目 */
+.txt3 p:nth-child(6) {
+    animation-delay: 6.0s
+}
+@keyframes textanimation {
+    0% {
+        transform: translateY(2em);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/*------背景画像固定------------*/
+.fixed-background {
+  min-height: 100vh;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+ 
+.background-1 {
+  background-image: url("ホーム/背景.jpg");
+.futoumei{
+background-color:rgba(255, 255, 255, 0.7);
+}
+
+
+
+/*--動画---------------------------------------------------------*/
+.video-container {
+    width: 95vw; /* ビューポート幅に合わせる */
+    height: 95vh; /* ビューポート高さに合わせる */
+    overflow: hidden; /* 画面外にはみ出さないように */
+    position: relative;
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 動画を親要素に収める */
+}
+/*------------------------------------------------------------------*/
+dl{
+  padding:10px;
+  width:100%;
+
+}
+dt {
+ color:navy;
+ font-weight:bold;
+ padding:0 10px 0 0;
+ width:700px;
+ float:left;
+ margin-bottom:7px;
+}
+dd {
+ color:#333;
+ margin-bottom:7px;
+}
+dl::after {
+content: '';
+display: block;
+clear: both;
+}
+/*---当社----------------------------------------------------------*/
+
+.tousya{
+background-color:white;
+}
+
+
+.content {
+    display: flex; /* 横並びを有効化 */
+    align-items: center; /* 縦方向を中央揃え */
+    justify-content: space-between; /* 説明文と画像の間隔を確保 */
+    gap: 20px; /* 要素間の余白 */
+}
+
+.description {
+    font-size: 2vw;
+    max-width: 50%; /* 説明文の幅を制限 */
+    line-height: 1.5;
+    text-align: left;
+}
+
+.tousyadouga {
+    max-width: 40%; /* 動画の最大幅を設定 */
+    height: auto; /* 縦横比を維持 */
+    object-fit: cover; /* 動画を親要素に収める */
+}
+/*---事務所兼倉庫-------------------------------------------------------*/
+.zimusyokennsoukogazou {
+    max-width: 40%; /* 画像の最大幅を設定 */
+    height: auto; /* 縦横比を維持 */
+    object-fit: cover; /* 画像を親要素に収める */
+}
+/*---地図-------------------------------------------------------*/
+.container2 {
+    display: flex; /* 横並びに配置 */
+    align-items: center; /* 縦方向を中央揃え */
+    gap: 100px; /* 要素間の余白 */
+    width: 100%; /* 全体幅を親要素に合わせる */
+    flex-wrap: wrap; /* 画面幅が狭い場合に折り返しを許可 */
+}
+
+.map {
+    width: 40%; /* 地図の横幅を調整 */
+    height: 50vh; /* 高さをビューポートの50%に設定 */
+    border: 0; /* 枠線を削除 */
+　　margin-right: 100px; /* iframeと説明文の間にスペースを追加 */
+}
+
+.description {
+    font-size: 1.5vw; /* 説明文のフォントサイズを調整 */
+    text-align: left; /* 左揃え */
+}
+
+/*---仕事内容-------------------------------------------------------*/
+.sigotonai{
+display: flex;
+margin: 0 auto;
+}
+.image_mouseover_4 {
+    display: flex; /* 子要素を横並びにする */
+    justify-content: center; /* 画像を均等配置する */
+    gap: 20px; /* 画像の間に一定のスペースを追加 */
+    overflow: hidden;
+    width: 100%;
+    background: #fff;
+}
+
+.image_mouseover_4 img {
+    display: block;
+    flex-shrink: 0; /* 画像が縮小されないように固定 */
+    transition-duration: 0.5s;
+}
+
+.image_mouseover_4 img:hover {
+    transform: scale(1.5);
+    transition-duration: 0.5s;
+    opacity: 0.6;
+}
+/*---お問い合わせ-------------------------------------------------------*/
+.kuukan{
+padding-left:250px
+}
+/*---下のurl-------------------------------------------------------*/
+.centerpotion{
+  margin:0 auto;
+}
+.centerpotion li{
+  display:inline-block;
+}
+/*---フッター--------------------------------------------------*/
+footer{
+background-color:black;
+text-align: center;
+padding: 10px;
+width: auto;
+}
+
+

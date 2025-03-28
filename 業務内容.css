@@ -1,0 +1,194 @@
+ @charset "UTF-8";
+html{
+    font-size:100%;/*ユーザー設定の文字サイズを正しく反映*/
+}
+*{
+    box-sizing:border-box;
+}
+img{
+    max-width:100%;/*画像が親要素からはみ出すのを防ぐ*/
+    height:auto;
+    box-sizing:border-box;
+}
+body{
+    background-color:#fff;
+    margin:0;
+    padding:0;
+}
+/*一回リンク押したら紫に代わる*/
+
+a:visited{
+  color :purple;
+}
+a:hover{
+  color : green;
+}
+
+a {
+ text-decoration: none; /* リンクの下線を消す */
+ position: relative; /* 擬似要素の基準位置を設定 */
+ color: #333; /* リンクテキストの色 */
+ padding-bottom: 10px; /* リンクテキスト下部の余白 */
+}
+a::before {
+ content: ""; /* 擬似要素の内容は空に設定 */
+ position: absolute; /* リンクを基準に絶対位置を指定 */
+ left: 0; /* 下線を左端から表示するための開始位置 */
+ bottom: 0; /* リンクテキストの下に下線を配置 */
+ width: 0; /* 初期の下線幅を0に設定 */
+ height: 2px; /* 下線の太さ */
+ background-color: #333; /* 下線の色 */
+ transition: all 0.4s ease; /* ホバー時の下線アニメーション効果 */
+}
+a:hover::before {
+ width: 100%; /* ホバー時に下線が全体に広がるよう設定 */
+}
+.text:hover {
+  text-shadow: 0 0 0 #000, 0 1.5em 0 #000; /* 2つの影の位置を上方向に1.5emずつずらす */
+}
+
+/*----ヘッダー--------------------------------------------*/
+
+header{
+    width:100%;
+    background-color:#fff;
+    display:flex;
+    justify-content:space-between; /*メニューを右端に置く方法その１*/
+    padding:0 2%;
+    align-items:center;
+　　position:fixed;  /*ヘッダーの位置を固定*/
+    top:0;  /*ヘッダーの位置を固定（上0）*/
+    left:0; /*ヘッダーの位置を左固定（左０）*/
+}  
+ul{
+    display:flex;
+    list-style:none;
+}
+li{
+    margin-left:40px;
+}
+a{
+    text-decoration:none;
+    color:#333;
+}
+nav{
+    margin-left:auto; /*メニューを右端に置く方法その２*/
+}
+a:hover{
+    opacity: 0.5;
+}
+/*----文字が出てくる--------------------------------------------*/
+.txt {
+    display: flex;
+    justify-content:center;
+    overflow: hidden;
+}
+
+.txt p {
+    color: cadetblue;
+    font-size: 6vw;
+    font-weight: bold;
+    letter-spacing: .06em;
+    margin:0;
+    
+
+    /* ここからアニメーション関係 */
+    transform: translateY(2em);
+    animation: textanimation 2s forwards;
+}
+/* 1文字目 */
+.txt p:nth-child(1) {
+    animation-delay: 0.4s
+}
+/* 2文字目 */
+.txt p:nth-child(2) {
+    animation-delay: 0.6s
+}
+/* 3文字目 */
+.txt p:nth-child(3) {
+    animation-delay: 0.8s
+}
+/* 4文字目 */
+.txt p:nth-child(4) {
+    animation-delay: 1.0s
+}
+/* 5文字目 */
+.txt p:nth-child(5) {
+    animation-delay: 1.2s
+}
+/* 6文字目 */
+.txt p:nth-child(6) {
+    animation-delay: 1.4s
+}
+
+@keyframes textanimation {
+    0% {
+        transform: translateY(2em);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/*------背景画像固定------------*/
+.fixed-background {
+  min-height: 100vh;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+ 
+.background-3 {
+  background-image: url("業務内容/gyohai.jpg");
+}
+.futoumei{
+background-color:rgba(255, 255, 255, 0.7);
+}
+/*---業務内容---------------------------------------------------------*/
+
+.gyoumunaiyou{
+background-color:white;
+}
+/*------写真------------*/
+.boxes-wrapper{
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 150px;
+}
+.box{
+  width: 900px;
+  height:900px;
+  background-color: rgba(); /*------背景色透明------------*/
+  opacity: 0;
+}
+.box-02.displayed{
+  animation-delay: 0.8s;
+}
+.displayed{
+  animation: fadeUp 1s forwards;
+}
+@keyframes fadeUp{
+  0%{opacity:0; transform: translateY(0);}
+100%{opacity:1; transform: translateY(-100px);}
+}
+
+/*---お問い合わせ-------------------------------------------------------*/
+.kuukan{
+padding-left:250px
+}
+/*---下のurl-------------------------------------------------------*/
+.centerpotion{
+  margin:0 auto;
+}
+.centerpotion li{
+  display:inline-block;
+}
+/*---フッター--------------------------------------------------*/
+footer{
+background-color:black;
+text-align: center;
+padding: 10px;
+width: auto;
+}
