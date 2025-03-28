@@ -379,8 +379,13 @@ margin: 0 auto;
 }
 /*---お問い合わせ-------------------------------------------------------*/
 .kuukan{
-padding-left:250px
+  display: flex; /* 横並びに配置 */
+  align-items: center; /* 垂直方向の中央揃え */
+  justify-content: center; /* コンテナ全体を中央揃え */
+  gap: 20px; /* 文章と画像の間隔 */
+  text-align: left; /* テキストの左揃え */
 }
+
 /*---下のurl-------------------------------------------------------*/
 .centerpotion{
   margin:0 auto;
